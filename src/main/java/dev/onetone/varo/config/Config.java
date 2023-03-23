@@ -93,4 +93,15 @@ public class Config {
         }
         return players;
     }
+    public Team getTeam (Player player) {
+        Team playerteam = null;
+        for (Team t: getTeams()) {
+            for (Player p: t.getMembers()) {
+                if (p == player)    {
+                    playerteam = t;
+                }
+            }
+        }
+        return playerteam;
+    }
 }

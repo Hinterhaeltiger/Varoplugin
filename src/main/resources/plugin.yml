@@ -15,5 +15,8 @@ commands:
   jointeam:
     description: joins a team.
     permission: op
+  getteam:
+    description: gets a player's team
+    permission: op
 
 

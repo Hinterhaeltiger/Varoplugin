@@ -1,5 +1,6 @@
 package dev.onetone.varo;
 
+import dev.onetone.varo.commands.getteam.GetTeamCommand;
 import dev.onetone.varo.commands.jointeam.JoinTeamCommand;
 import dev.onetone.varo.commands.jointeam.JoinTeamCommandTabCompleter;
 import dev.onetone.varo.commands.reloadborder.ReloadBorderCommand;
@@ -24,7 +25,7 @@ public class Varo extends JavaPlugin {
     @Override
     public void onEnable() {
 
-        Bukkit.getServer().getLogger().log(Level.INFO, "Varo loaded");
+        Bukkit.getServer().getLogger().log(Level.INFO, "Varo loaded (VER 0.1.0)");
         getServer().getPluginManager().registerEvents(new DeathEvent(), this);
 
         Config config = new Config();
@@ -36,6 +37,8 @@ public class Varo extends JavaPlugin {
         getCommand("setwinnerpodest").setTabCompleter(new SetWinnerPodestCommandTabCompletor());
         getCommand("jointeam").setTabCompleter(new JoinTeamCommandTabCompleter());
 
+
+        getCommand("getteam").setExecutor(new GetTeamCommand());
         getCommand("jointeam").setExecutor(new JoinTeamCommand());
         getCommand("setwinnerpodest").setExecutor(new SetWinnerPodestCommand(this));
         getCommand("testvictory").setExecutor(new TestVictoryCommand());
