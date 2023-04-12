@@ -77,7 +77,7 @@ public class Config {
         return (String) pluginconfig.get("victorymessage.chatmessage");
     }
     public List<Team> getTeams() {
-        return (List<Team>) pluginconfig.get("teams");
+        return Arrays.asList(teams);
     }
     public Player[] getPlayersInTeam(Integer teamid) {
         Player[] players = null;

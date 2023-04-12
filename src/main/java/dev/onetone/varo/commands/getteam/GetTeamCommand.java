@@ -1,6 +1,8 @@
 package dev.onetone.varo.commands.getteam;
 
+import dev.onetone.varo.Varo;
 import dev.onetone.varo.config.Config;
+import dev.onetone.varo.teams.Team;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -12,10 +14,27 @@ public class GetTeamCommand implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
         if (sender instanceof Player)   {
-            Config config = new Config();
-            Player req = Bukkit.getPlayer(strings[0]);
+            /*Config config = new Config();
 
-            sender.sendMessage(config.getTeam(req.getPlayer()).toString());
+            if(strings.length == 1) {
+                Player req = Bukkit.getPlayer(strings[0]);
+
+                sender.sendMessage(config.getTeam(req.getPlayer()).toString());
+            } else {
+                sender.sendMessage("Please provide a valid player as an argument.");
+            }
+            */
+
+
+
+
+
+            Team exteam = new Team(1, new Player[]{((Player) sender).getPlayer()}, "test");
+            Varo.getPlugin().getConfig().set("teams", exteam.toString());
+
+
+            Varo.getPlugin().saveConfig();
+
             return true;
         } else {
             return false;

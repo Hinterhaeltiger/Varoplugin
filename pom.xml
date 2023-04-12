@@ -12,7 +12,7 @@
     <name>Varo</name>
 
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>17</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <kotlin.version>1.8.20-RC</kotlin.version>
     </properties>
@@ -24,14 +24,20 @@
                 <artifactId>maven-shade-plugin</artifactId>
                 <version>3.2.4</version>
                 <executions>
+
                     <execution>
                         <phase>package</phase>
                         <goals>
                             <goal>shade</goal>
                         </goals>
-                        <configuration>
-                            <createDependencyReducedPom>false</createDependencyReducedPom>
-                        </configuration>
+                            <configuration>
+                                <relocations>
+                                    <relocation>
+                                        <pattern>de.eldoria</pattern>
+                                        <shadedPattern>dev.onetone.varo.libs</shadedPattern>
+                                    </relocation>
+                                </relocations>
+                            </configuration>
                     </execution>
                 </executions>
             </plugin>
@@ -56,7 +62,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <jvmTarget>1.8</jvmTarget>
+                    <jvmTarget>17</jvmTarget>
                 </configuration>
             </plugin>
             <plugin>
@@ -80,8 +86,8 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
+                    <source>17</source>
+                    <target>17</target>
                 </configuration>
             </plugin>
         </plugins>
@@ -102,6 +108,10 @@
             <id>sonatype</id>
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
+        <repository>
+            <id>eldoriamaven</id>
+            <url>https://eldonexus.de/repository/maven-public</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -110,6 +120,11 @@
             <artifactId>paper-api</artifactId>
             <version>1.19.3-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>de.eldoria.util</groupId>
+            <artifactId>jackson-configuration</artifactId>
+            <version>2.0.0-DEV</version>
         </dependency>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
