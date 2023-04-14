@@ -6,6 +6,7 @@ import io.papermc.paper.math.Position;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.World;
 import org.bukkit.configuration.Configuration;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -96,8 +97,8 @@ public class Config {
     public Team getTeam (Player player) {
         Team playerteam = null;
         for (Team t: getTeams()) {
-            for (Player p: t.getMembers()) {
-                if (p == player)    {
+            for (OfflinePlayer p: t.getMembers()) {
+                if ((Player) p == player)    {
                     playerteam = t;
                 }
             }

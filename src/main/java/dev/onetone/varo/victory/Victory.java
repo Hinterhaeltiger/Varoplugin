@@ -4,7 +4,6 @@ import dev.onetone.varo.Varo;
 import dev.onetone.varo.config.Config;
 import io.papermc.paper.math.Position;
 import net.kyori.adventure.text.Component;
-import net.md_5.bungee.api.chat.BaseComponent;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.command.CommandException;

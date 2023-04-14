@@ -11,6 +11,7 @@ import org.bukkit.event.entity.ProjectileHitEvent;
 
 import java.util.Objects;
 import java.util.Random;
+import java.util.logging.Level;
 
 public class DeathEvent implements Listener {
     private int get(String[] type) {
@@ -82,9 +83,14 @@ public class DeathEvent implements Listener {
 
         else if (lastCause.equals("DROWNING")) { sendVictim(messages.Drowned, e); }
 
+        else if (lastCause.equals("IMPALED")) { sendVictim(messages.Drowned, e); }
+
         else if (lastCause.equals("WITHER")||lastCause.equals("MAGIC")) { sendVictim(messages.Potion, e); }
 
-        else { sendVictim(messages.Wildcard, e); }
+        else {
+            sendVictim(messages.Wildcard, e);
+            Bukkit.getLogger().log(Level.INFO, lastCause);
+        }
     }
 
     public void onProjectileHitEvent(ProjectileHitEvent e) {

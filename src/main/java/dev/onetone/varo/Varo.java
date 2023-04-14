@@ -36,7 +36,7 @@ public class Varo extends JavaPlugin {
         // Defining a second config key for database.yml
         ConfigKey<ConfigFile> teamsConfig = ConfigKey.of("Database Config", Path.of("teams.yml"), ConfigFile.class, ConfigFile::new);
         // Reloading the config with the key
-
+        
         // Saves all configurations loaded via this instance
         config.save();
         // Saves the configuration associated with this key
