@@ -1,0 +1,37 @@
+name: Varo
+version: 1.0-SNAPSHOT
+main: dev.onetone.varo.Varo
+authors:
+ - hinterhältiger
+commands:
+  getteam:
+    description: Gets a given players team
+    aliases:
+     - vgt
+    permission: op
+    permission-message: §cYou don't have the permission to execute this command.
+  jointeam:
+    description: Joins a team
+    aliases:
+     - vjt
+    permission: '*'
+    permission-message: §cYou don't have the permission to execute this command.
+  reloadborder:
+    description: Reloads the minecraft border
+    aliases:
+     - vrb
+    permission: op
+    permission-message: §cYou don't have the permission to execute this command.
+  setwinnerpodest:
+    description: Sets the winner podest to the executors current coordinates
+    aliases:
+     - vswp
+    permission: op
+    permission-message: §cYou don't have the permission to execute this command.
+  testvictory:
+    description: Test victory
+    aliases:
+     - vtv
+    permission: op
+    permission-message: §cYou don't have the permission to execute this command.
+api-version: 1.16
