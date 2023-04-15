@@ -5,16 +5,3 @@ victorymessage: #%winner% is replaced by the winner's name and %wkills% is repla
   title: §b/winner/
   subtitle: §fhat das BrotiMC Varo Event mit §b/wkills/§f kills gewonnen.
   chatmessage: §b/winner/§f hat das BrotiMC Varo Event mit §b/wkills/§f kills gewonnen.
-teams:
-  1:
-    members: [Keltasur, Keltazur]
-    name: Henkel & Schenkel
-  2:
-    members: [Dr_DeadFail, Lolzocker301]
-    name: Team Korsatka
-  3:
-    members: [EinfachMariaa, Minzee]
-    name: Die Johnson Schwestern
-  4:
-    members: [SleagleGER, WeissbrotDE]
-    name: Die Kampfenten

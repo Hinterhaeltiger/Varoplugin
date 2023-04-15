@@ -20,7 +20,7 @@ public class Victory {
     }
 
 
-    public void activate(Player activator) {
+    public void activate(Player winner) {
         JavaPlugin varoplugin = Varo.getProvidingPlugin(Varo.class);
         try {
             FileConfiguration configfile = varoplugin.getConfig();
@@ -28,10 +28,9 @@ public class Victory {
 
             if (configfile.get("victorymessage.title") != null && configfile.get("victorymessage.subtitle") != null && configfile.get("victorymessage.chatmessage") != null && configfile.get("winnerpodestx") != null && configfile.get("winnerpodesty") != null && configfile.get("winnerpodestz") != null) {
                 VictoryMessageHandler messageHandler = new VictoryMessageHandler(varoplugin);
-                messageHandler.announceWinner(activator, winnerkillcount);
+                messageHandler.announceWinner(winner, winnerkillcount);
 
-                activator.teleport(config.getWinnerPodestCoords());
-
+                winner.teleport(config.getWinnerPodestCoords());
             } else {
                 Bukkit.getServer().broadcast(Component.text("config file is incomplete!"));
             }
